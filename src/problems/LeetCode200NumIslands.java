@@ -2,11 +2,16 @@ package problems;
 
 public class LeetCode200NumIslands {
 	public static void main(String[] args) {
-		
-		
+		char[][] grid = {
+		               {'1','1','1','1','0'},
+		               {'1','1','0','1','0'},
+		               {'1','1','0','0','0'},
+		               {'0','0','0','0','0'}
+		             };
+		System.out.println(numIslands(grid));
 	}
 
-	public int numIslands(char[][] grid) {
+	public static int numIslands(char[][] grid) {
 		if(grid.length==0||grid[0].length==0) {
 			return 0;
 		}
@@ -17,7 +22,7 @@ public class LeetCode200NumIslands {
 			for (int j = 0; j < n; j++) {
 				System.out.printf("i:%s j:%s val:",i,j, grid[i][j]);
 				System.out.println();
-				if(grid[m][n]=='1') {
+				if(grid[i][j]=='1') {
 					count++;
 					System.out.printf("count:%s travel", count);
 					System.out.println();
@@ -30,8 +35,8 @@ public class LeetCode200NumIslands {
 		return count;
 	}
 	
-	public void dfsTraverse(char[][] grid,int m, int n, int i, int j) {
-		if (i<0||i>=m||j<0||j>=n||grid[i][j]=='1') {//out of boundary
+	public static void dfsTraverse(char[][] grid,int m, int n, int i, int j) {
+		if (i<0||i>=m||j<0||j>=n||grid[i][j]!='1') {//out of boundary
 			return;
 		} else {
 			// have traversed
