@@ -2,7 +2,6 @@ package problems;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 
 public class LeetCode261GraphValidTree {
@@ -29,11 +28,6 @@ public class LeetCode261GraphValidTree {
 		for (int[] e :edgs) {
 			map.get(e[0]).add(e[1]);
 			map.get(e[1]).add(e[0]);
-		}
-		
-		for(int i =0;i<n;i++) {
-			for (int j :map.get(i)) {
-			}
 		}
 		
 		boolean[] visited = new boolean[n];
